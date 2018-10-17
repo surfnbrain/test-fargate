@@ -10,4 +10,4 @@ service:
   - /*
   pipeline:
     notify:
-    - mdownhower@gmail.com
+    - surfnbrain@gmail.com
