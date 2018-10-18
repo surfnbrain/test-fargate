@@ -1,0 +1,7 @@
+{
+  "Parameters": {
+    "EnvironmentName": "acceptance",
+    "Namespace": "test",
+    "Provider": "ecs-fargate"
+  }
+}

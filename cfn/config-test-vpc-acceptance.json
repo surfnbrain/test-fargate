@@ -1,0 +1,7 @@
+{
+  "Parameters": {
+    "AZCount": "3",
+    "ElbInternal": "false",
+    "SshAllow": "0.0.0.0/0"
+  }
+}
