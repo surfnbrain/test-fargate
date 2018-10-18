@@ -1,6 +1,9 @@
 environments:
 - name: acceptance
   provider: ecs-fargate
+  loadbalancer:
+      hostedzone: devops.evisions.com
+      certificate: 62468c03-83b5-450a-80e1-b31da691c07a
 - name: production
   provider: ecs-fargate
   loadbalancer:
