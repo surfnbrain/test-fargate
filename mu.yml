@@ -3,6 +3,9 @@ environments:
   provider: ecs-fargate
 - name: production
   provider: ecs-fargate
+  loadbalancer:
+      hostedzone: devops.evisions.com
+      certificate: 62468c03-83b5-450a-80e1-b31da691c07a
 
 service:
   port: 80
@@ -11,3 +14,8 @@ service:
   pipeline:
     notify:
     - surfnbrain@gmail.com
+
+tags:
+  'test-environment-acceptance':
+    dept: devops
+    project: muLearning
