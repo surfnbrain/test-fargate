@@ -12,6 +12,27 @@ environments:
       name: prod
       certificate: 62468c03-83b5-450a-80e1-b31da691c07a
 
+templates:
+  mu-r53-example: 
+    Resources:
+      DNS: 
+        Type: "AWS::Route53::HostedZone"
+        Properties: 
+          HostedZoneConfig: 
+            Comment: "My hosted zone for iris.devops.evisions.com"
+          Name: "iris.devops.evisions.com"
+#          VPCs: 
+#            - 
+#              VPCId: "vpc-4262b338"
+#              VPCRegion: "us-east-1"
+          HostedZoneTags: 
+            - 
+              Key: "dept"
+              Value: "devops"
+            - 
+              Key: "project"
+              Value: "learn_cfn"
+ 
 service:
   port: 80
   pathPatterns:
