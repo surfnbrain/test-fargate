@@ -13,7 +13,7 @@ environments:
       certificate: 62468c03-83b5-450a-80e1-b31da691c07a
 
 templates:
-  mu-r53-example: 
+  md-test-environment-acceptance: 
     Resources:
       DNS: 
         Type: "AWS::Route53::HostedZone"
