@@ -10,10 +10,10 @@ environments:
   loadbalancer:
       hostedzone: devops.evisions.com
       name: prod
-      certificate: 62468c03-83b5-450a-80e1-b31da691c07a
+#      certificate: 62468c03-83b5-450a-80e1-b31da691c07a
 
 templates:
-  md-test-environment-acceptance: 
+  md-test-pipeline-test-fargate: 
     Resources:
       DNS: 
         Type: "AWS::Route53::HostedZone"
@@ -21,10 +21,6 @@ templates:
           HostedZoneConfig: 
             Comment: "My hosted zone for iris.devops.evisions.com"
           Name: "iris.devops.evisions.com"
-#          VPCs: 
-#            - 
-#              VPCId: "vpc-4262b338"
-#              VPCRegion: "us-east-1"
           HostedZoneTags: 
             - 
               Key: "dept"
@@ -32,9 +28,42 @@ templates:
             - 
               Key: "project"
               Value: "learn_cfn"
- 
+
+#templates:
+#  md-test-pipeline-test-fargate: 
+#    Resources:
+#      DNS: 
+#        Type: "AWS::Route53::HostedZone"
+#        Properties: 
+#          HostedZoneConfig: 
+#            Comment: "My hosted zone for iris.devops.evisions.com"
+#          Name: "iris.devops.evisions.com"
+#          HostedZoneTags: 
+#            - 
+#              Key: "dept"
+#              Value: "devops"
+#            - 
+#              Key: "project"
+#              Value: "learn_cfn"
+
+#environments:
+#- name: acceptance
+#  provider: ecs-fargate
+#  loadbalancer:
+#      hostedzone: iris.devops.evisions.com
+#      name: demo
+#      certificate: 62468c03-83b5-450a-80e1-b31da691c07a
+#- name: production
+#  provider: ecs-fargate
+#  loadbalancer:
+#      hostedzone: iris.devops.evisions.com
+#      name: prod
+#      certificate: 62468c03-83b5-450a-80e1-b31da691c07a 
+
 service:
   port: 80
+#  port: 443
+  protocol: https
   pathPatterns:
   - /*
   pipeline:
@@ -42,6 +71,6 @@ service:
     - surfnbrain@gmail.com
 
 tags:
-  'test-environment-acceptance':
+  'md-test-environment-acceptance':
     dept: devops
     project: muLearning
